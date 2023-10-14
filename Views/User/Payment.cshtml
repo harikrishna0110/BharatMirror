@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Payment";
+}
+
+<h1>Payment</h1>
+
+<form asp-action="payment">
+    <input type="hidden" name="Id" value="@ViewBag.Id" />
+    <input type="submit" value="Confirm Payment" class="btn btn-success" /> |
+
+    <a asp-action="Index"><button class="btn btn-warning">Cancel</button></a>
+</form> 

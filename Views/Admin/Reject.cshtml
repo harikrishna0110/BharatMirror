@@ -1,0 +1,53 @@
+﻿@model BharatMirror.Models.Advertisement
+
+@{
+    ViewData["Title"] = "Reject";
+}
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">BharatMirror</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class='nav-item active'><a class='nav-link' href="/News"> Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>Reject</h1>
+
+<h4>Advertisement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Reject">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            
+           
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+                <input asp-for="status" value=@ViewBag.reject class="form-control" />
+                <span asp-validation-for="status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="reason" class="control-label"></label>
+                <input asp-for="reason" class="form-control" />
+                <span asp-validation-for="reason" class="text-danger"></span>
+            </div>
+           <br/>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

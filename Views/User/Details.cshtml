@@ -1,0 +1,91 @@
+﻿@model BharatMirror.Models.Advertisement
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Advertisement</h4>
+    <hr />
+    <dl class="row">
+       
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.image_url)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.image_url)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.business_url)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.business_url)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.category)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.reason)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.reason)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.start_time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.start_time)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.end_time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.end_time)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ctr)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ctr)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.views)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.views)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.payment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.payment)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditAdvertisement" asp-route-id="@Model.Id"><button class="btn btn-warning my-1">Edit</button></a> |
+    <a asp-action="Index">Back to List</a>
+</div>

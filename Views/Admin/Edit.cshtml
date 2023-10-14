@@ -1,0 +1,106 @@
+﻿@model BharatMirror.Models.Advertisement
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">BharatMirror</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class='nav-item active'><a class='nav-link' href="/News"> Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h4>Edit Advertisement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="user_id" class="control-label"></label>
+                <input asp-for="user_id" class="form-control" disabled/>
+                <span asp-validation-for="user_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="image_url" class="control-label"></label>
+                <input asp-for="image_url" class="form-control" disabled/>
+                <span asp-validation-for="image_url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="business_url" class="control-label"></label>
+                <input asp-for="business_url" class="form-control" disabled/>
+                <span asp-validation-for="business_url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="title" class="control-label"></label>
+                <input asp-for="title" class="form-control" disabled/>
+                <span asp-validation-for="title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" disabled/>
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="category" class="control-label"></label>
+                <input asp-for="category" class="form-control" disabled/>
+                <span asp-validation-for="category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+                <input asp-for="status" value=@ViewBag.accept class="form-control" />
+                <span asp-validation-for="status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="reason" class="control-label"></label>
+                <input asp-for="reason" class="form-control" />
+                <span asp-validation-for="reason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="start_time" class="control-label"></label>
+                <input asp-for="start_time" class="form-control" disabled />
+                <span asp-validation-for="start_time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="end_time" class="control-label"></label>
+                <input asp-for="end_time" class="form-control" disabled />
+                <span asp-validation-for="end_time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ctr" class="control-label"></label>
+                <input asp-for="ctr" class="form-control" disabled/>
+                <span asp-validation-for="ctr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="views" class="control-label"></label>
+                <input asp-for="views" class="form-control" disabled/>
+                <span asp-validation-for="views" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="payment" class="control-label"></label>
+                <input asp-for="payment" class="form-control" disabled />
+                <span asp-validation-for="payment" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

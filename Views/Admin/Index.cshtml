@@ -1,0 +1,131 @@
+﻿@model IEnumerable<BharatMirror.Models.Advertisement>
+
+@{
+    ViewData["Title"] = "index";
+}
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">BharatMirror</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class='nav-item'><a class='nav-link' href="/News"> Home</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/User/Logout">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<h1>Welcome Admin !</h1>
+
+<div class="table-responsive">
+
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.user_id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.image_url)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.business_url)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.category)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.reason)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.start_time)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.end_time)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ctr)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.views)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.payment)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.user_id)
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src=@Html.DisplayFor(modelItem => item.image_url)
+                                         alt=""
+                                         style="width: 80px; height: 60px"
+                                         class="rounded" />
+                                </div>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-dark"><a target="_blank" href=@Html.DisplayFor(modelItem => item.business_url) style="text-decoration:none; color:white">Visit</a></button>
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.category)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.reason)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.start_time)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.end_time)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ctr)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.views)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.payment)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id"><button class="btn btn-warning my-1">Edit</button></a>
+                                <a asp-action="Reject" asp-route-id="@item.Id"><button class="btn btn-danger my-1">Reject</button></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>x
+            </table>
+    </div>

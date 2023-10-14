@@ -1,0 +1,73 @@
+﻿@model BharatMirror.Models.Advertisement
+
+@{
+    ViewData["Title"] = "EditAdvertisement";
+}
+
+<h1>EditAdvertisement</h1>
+
+<h4>Advertisement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditAdvertisement">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+           
+            <div class="form-group">
+                <label asp-for="image_url" class="control-label"></label>
+                <input asp-for="image_url" class="form-control" />
+                <span asp-validation-for="image_url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="business_url" class="control-label"></label>
+                <input asp-for="business_url" class="form-control" />
+                <span asp-validation-for="business_url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="title" class="control-label"></label>
+                <input asp-for="title" class="form-control" />
+                <span asp-validation-for="title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="category" class="control-label"></label>
+                <select asp-for="category" class="form-control">
+                    <option value="#">Please Select Category</option>
+                    <option value="">Home </option>
+                    <option value="Business">Business</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Health">Health</option>
+                    <option value="Science">Science</option>
+                    <option value="Technology">Technology</option>
+                </select>
+                <span asp-validation-for="category" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="start_time" class="control-label"></label>
+                <input asp-for="start_time" class="form-control" />
+                <span asp-validation-for="start_time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="end_time" class="control-label"></label>
+                <input asp-for="end_time" class="form-control" />
+                <span asp-validation-for="end_time" class="text-danger"></span>
+            </div>
+          <br />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
